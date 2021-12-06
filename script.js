@@ -1,3 +1,20 @@
+let myNav = document.querySelector('#navBar');
+
+// Navbar function
+let moveTop = () => {
+    let scrolly = ((document.body.scrollY) / (document.body.clientHeight)) * 100;
+    let scrolltop = ((document.documentElement.scrollTop) / (document.body.clientHeight)) * 100;
+
+    if ((scrolly >= 2 || scrolltop >= 2) && (scrolly <= 100 || scrolltop <= 100)) {
+        myNav.style.backgroundColor = "rgba(7, 7, 7, 0.788)";
+    }
+
+    else {
+        myNav.style.backgroundColor = "transparent";
+    }
+}
+
+window.onscroll = function () { moveTop() };
 let loc = document.getElementById("d1");
 let tempicon1 = document.getElementById("image_00");
 let tempvalue1 = document.getElementById("temp_00");
